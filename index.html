@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Exercícios</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="top-bar">
+        <h3>Lista de Exercícios I - Desenvolvimento Web</h3>
+    </div>
+    <div class="content">
+        <div class="student-info">
+            <h2>Informações do Aluno</h2>
+            <p><strong>Nome:</strong> João Pedro Akira Kishi Ohashi</p>
+            <p><strong>Turma:</strong> 2023</p>
+        </div>
+    <div class="container">
+        <div class="exercise">
+            <h2>Exercício 1:</h2>
+            <p>Escreva um programa que mostre a soma de todos os divisores de um dado número X. 
+                Um divisor é qualquer número menor que X cujo resto da divisão é igual a 0.</p>
+                <textarea id="code1" readonly>
+function somaDivisores() {
+    let x = parseInt(prompt("Digite um número inteiro:"));
+    let soma = 0;
+    for (let i = 1; i < x; i++) {
+        if (x % i === 0) soma += i;
+    }
+    document.getElementById('output1').innerText = `Soma dos divisores: ${soma}`;
+}
+                </textarea>
+            <button onclick="somaDivisores()">Testar</button>
+            <div class="output" id="output1"></div>
+        </div>
+        <div class="exercise">
+            <h2>Exercício 2:</h2>
+            <p>Considere dois pontos no espaço 2D com as seguintes coordenadas: A(x 1 , y 1 ) e B(x 2 ,y 2 ). 
+                A distância euclidiana D,</p>
+                <textarea id="code2" readonly>
+function calculaDistancia() {
+    let x1 = parseFloat(prompt("Digite x1:"));
+    let y1 = parseFloat(prompt("Digite y1:"));
+    let x2 = parseFloat(prompt("Digite x2:"));
+    let y2 = parseFloat(prompt("Digite y2:"));
+    let distancia = Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
+    document.getElementById('output2').innerText = `Distância: ${distancia.toFixed(2)}`;
+}
+                </textarea>
+            <button onclick="calculaDistancia()">Testar</button>
+            <div class="output" id="output2"></div>
+        </div>
+        <div class="exercise">
+            <h2>Exercício 3:</h2>
+            <p>Dada uma frase de entrada por um usuário, faça um programa que conte a ocorrência de cada palavra nesta frase. 
+                O programa não deve distinguir letras maiúsculas e minúsculas.</p>
+                <textarea id="code3" readonly>
+function contaPalavras() {
+    let frase = prompt("Digite uma frase:");
+    let palavras = frase
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .replace(/[^\w\s\-]/g, '')
+        .split(/\s+/);
+    let contagem = {};
+    palavras.forEach(palavra => {
+        if (palavra) {
+            contagem[palavra] = (contagem[palavra] || 0) + 1;
+        }
+    });
+    let resultado = "Contagem de palavras:\n";
+    for (let [palavra, quantidade] of Object.entries(contagem)) {
+        resultado += `${palavra}: ${quantidade}\n`;
+    }
+    document.getElementById('output3').innerText = resultado;
+}
+                </textarea>
+            <button onclick="contaPalavras()">Testar</button>
+            <div class="output" id="output3"></div>
+        </div>
+        <div class="exercise">
+            <h2>Exercício 4:</h2>
+            <p>Faça um programa que leia uma string de números como entrada de um usuário que
+                representa uma matriz e diga qual dimensão dela (quantidade de linhas e colunas). As linhas
+                da matriz são separadas por um caractere de ponto e vírgula ‘;’e as colunas são separadas por
+                um espaço vazio ‘ ’.</p>
+                <textarea id="code4" readonly>
+function dimensaoMatriz() {
+    let entrada = prompt("Digite a matriz como uma string (linhas separadas por ';' e colunas por espaço):");
+    let linhas = entrada.split(';');
+    let numLinhas = linhas.length;
+    let numColunas = linhas[0].trim().split(' ').length;
+    document.getElementById('output3').innerText = `Essa é uma matriz de dimensão ${numLinhas} x ${numColunas}.`;
+}
+                </textarea>
+            <button onclick="dimensaoMatriz()">Testar</button>
+            <div class="output" id="output4"></div>
+        </div>
+        <div class="exercise">
+            <h2>Exercício 5:</h2>
+            <p>Dado um número inteiro positivo N como entrada de um usuário, escreva um programa
+                que mostre os primeiros N números da sequência de Fibonacci. (A sequência de Fibonacci é
+                iniciada por 0 e 1, e o próximo número é sempre a soma dos dois últimos).</p>
+                <textarea id="code5" readonly>
+function fibonacciSequencia() {
+    let n = parseInt(prompt("Digite um número inteiro positivo (N):"));
+    let sequencia = [];
+    for (let i = 0; i < n; i++) {
+        if (i === 0) {
+            sequencia.push(0);
+        } else if (i === 1) {
+            sequencia.push(1);
+        } else {
+            sequencia.push(sequencia[i - 1] + sequencia[i - 2]);
+        }
+    }
+    document.getElementById('output5').innerText = `Os primeiros ${n} números da sequência de Fibonacci são:\n${sequencia.join(', ')}`;
+}
+                </textarea>
+            <button onclick="fibonacciSequencia()    ">Testar</button>
+            <div class="output" id="output5"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

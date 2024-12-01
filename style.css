@@ -1,0 +1,89 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+}
+.header {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+.container {
+    margin: 20px;
+}
+h2 {
+    color: #333;
+}
+.exercise {
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+textarea {
+    width: 99%;
+    height: 150px;
+    resize: none;
+    margin-bottom: 10px;
+    font-family: monospace;
+    font-size: 14px;
+    background-color: #f4f4f9;
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+button {
+    padding: 10px 20px;
+    color: white;
+    background-color: #28a745;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #218838;
+}
+.output {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #f4f4f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-family: monospace;
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+}
+
+.top-bar {
+    background-color: #212529;
+    color: white;
+    padding: 10px 20px;
+}
+
+.content {
+    margin: 20px auto;
+    max-width: 800px;
+    background-color: white;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.student-info {
+    margin-bottom: 30px;
+}
+
+.student-info h2 {
+    margin-bottom: 10px;
+}
+
+.student-info p {
+    margin: 5px 0;
+}
